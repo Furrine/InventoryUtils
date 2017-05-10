@@ -28,7 +28,7 @@ public class autoBlock implements Listener {
 	public void onPlayerPlaceBlock(BlockPlaceEvent e){
 		
 		Player player = e.getPlayer();
-		ItemStack inHand = player.getInventory().getItemInHand();
+		ItemStack inHand = player.getInventory().getItemInMainHand();
 		Block placed = e.getBlock();
 		
 		if(!plugin.autoBlockArray.contains(player)){return;} //If no plugin.autoBlockArray return
@@ -36,12 +36,12 @@ public class autoBlock implements Listener {
 		if(inHand.getType() == placed.getType() && inHand.getAmount() == 1){ //The player placed the last block of his main hand
 			//Survival action
 			if(player.getGameMode() == GameMode.SURVIVAL){
-				player.getInventory().getItemInHand().setAmount(0);
+				player.getInventory().getItemInMainHand().setAmount(0);
 				if(player.getInventory().containsAtLeast(new ItemStack(placed.getType()), 1)){
 					int newItemInt = player.getInventory().first(placed.getType());
 					ItemStack newItem = player.getInventory().getItem(newItemInt);
 					player.getInventory().setItem(newItemInt, new ItemStack(Material.AIR));
-					player.getInventory().setItemInHand(newItem);
+					player.getInventory().setItemInMainHand(newItem);
 				}
 			}
 		}

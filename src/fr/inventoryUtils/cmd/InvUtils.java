@@ -29,7 +29,7 @@ public class InvUtils extends commands implements CommandExecutor {
 			player.spigot().sendMessage(message1);
 			
 			message2.setText(  "§e§lInventory Utils §r§eplugin\n"
-							+ "§bmade by : §3§lYukine§f\n"
+							+ "§bmade by : §3§lFurrine§f\n"
 							+ "§aVersion: §21.1.2 §r§c(inDev version)");
 			message2.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/inventoryutils.39925/"));
 			message2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(ChatColor.YELLOW+"Open Plugin page on Spigotmc.org").create()));
