@@ -1,0 +1,40 @@
+main: fr.inventoryUtils.Main
+name: inventoryUtils
+version: 1.1.2
+author: Furrine
+description: InDev Inventory Utils plugin.
+commands:
+  InvUtils: 
+    usage: /InvUtils
+    permission: iutils.admin
+    permission-message: You don't have the permission 'iutils.admin'
+    description: Show infos about plugin
+  autoblock:
+    usage: /autoblock <ON|OFF>
+    permission: iutils.autoblock.self
+    permission-message: You can't change your autoblock status
+    description: Change self autoblock status
+    aliases: ab
+  otherautoblock:
+    usage: /otherautoblock <name> <ON|OFF>
+    permission: iutils.autoblock.other
+    permission-message: You don't have the permission 'iutils.autoblock.other'
+    description: change another player autoblock status
+    aliases: oab
+permissions:
+  iutils.*:
+    description: all iUtils permissions
+    children: 
+      iutils.info: true
+      iutils.autoblock: true
+  iutils.admin:
+    description: Infos and config permission
+  iutils.autoblock.*:
+    description: All autoBlock permissions
+    children:
+       iutils.autoblock.self: true
+       iutils.autoblock.other: true
+  iutils.autoblock.self:
+    description: change self autoblock status
+  iutils.autoblock.other:
+    description: change other players autoblock status

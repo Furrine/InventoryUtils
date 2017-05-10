@@ -1,0 +1,4 @@
+#Default values when a player join the server
+defaultValues:
+  #automaticly place in your hand the last block you placed (if you have it in your inventory)
+  autoBlock: false
